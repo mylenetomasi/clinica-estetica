@@ -48,8 +48,7 @@ const Register = () => {
     
 
     if (isValid) {
-      // Implemente a lógica de cadastro aqui
-      // Você pode enviar os dados para um servidor, banco de dados, etc.
+    
       console.log('Nome Completo:', fullName);
       console.log('CPF:', cpf);
       console.log('Email:', email);

@@ -11,8 +11,8 @@ import { useNavigation } from '@react-navigation/native'
 
 const Login = () => {
   const navigation = useNavigation();
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
+  const [userName, setUserName] = useState('usuario');
+  const [password, setPassword] = useState('senha');
   const [userNameError, setUserNameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
@@ -31,12 +31,12 @@ const Login = () => {
       setPasswordError('');
     }
   
-    // Verifica as credenciais (exemplo simples, você deve implementar a lógica real)
+  
     if (userName === 'usuario' && password === 'senha') {
-      // Navega para a tela "Home" após o login bem-sucedido
+     
       navigation.navigate("HomeTabs");
     } else {
-      // Exibe uma mensagem de erro se as credenciais estiverem incorretas
+     
       console.log('Credenciais inválidas');
     }
   };

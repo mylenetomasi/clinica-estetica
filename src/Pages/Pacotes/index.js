@@ -5,20 +5,20 @@ import Header from '../../components/Header';
 const Promotion = () => {
   const promotions = [
     {
-      title: 'Spa Relaxante',
-      description: 'Desfrute de um dia de relaxamento com massagem.',
-      image:null, 
-      price: 'R$ 99',
+      title: 'Pacote de Spa Relaxante',
+      description: 'Desfrute de um dia de relaxamento com massagem, tratamento facial e manicure.',
+      image:null,
+      price: 'R$ 199,99',
     },
     {
-      title: 'Emagrecimento',
-      description: 'Alcance seus objetivos de perda de peso com nosso emagrecimento personalizado.',
+      title: 'Pacote de Emagrecimento',
+      description: 'Alcance seus objetivos de perda de peso com nosso pacote de emagrecimento personalizado.',
       image:null,
       price: 'R$ 299,99',
     },
     {
-      title: 'Botox',
-      description: 'Aplicação de botox',
+      title: 'Pacote de Beleza Completa',
+      description: 'Transforme sua aparência com nosso pacote de beleza completa, incluindo cabelo, maquiagem e mais.',
       image:null,
       price: 'R$ 149,99',
     },
@@ -27,7 +27,7 @@ const Promotion = () => {
   return (
     <ScrollView style={styles.container}>
       <Header/>
-      <Text style={styles.title}>Nossas Promoções</Text>
+      <Text style={styles.title}>Pacotes</Text>
       {promotions.map((promotion, index) => (
         <View style={styles.promotionCard} key={index}>
           <Image source={promotion.image} style={styles.promotionImage} />

@@ -1,20 +1,41 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+
 import Header from '../../components/Header';
 
-import axios from 'axios'
 const Home = () => {
-  const [procedures, setProceures] = React.useState([])
-
-
-  async function getPacotes() {
-    const response = await axios.get("http://191.52.55.170:19003/api/pacote/")
-    setProceures(response.data)
-  }
-
-  React.useEffect(() => {
-    getPacotes()
-  },[])
+  const procedures = [
+    {
+      title: 'Limpeza de Pele',
+      description: 'Realize uma limpeza profunda de pele para remover impurezas e melhorar a saúde da sua pele.',
+      image:null, 
+    },
+    {
+      title: 'Massagem Relaxante',
+      description: 'Desfrute de uma massagem relaxante para aliviar o estresse e melhorar seu bem-estar.',
+      image:null, 
+    },
+    {
+      title: 'Tratamento Facial',
+      description: 'Melhore a aparência da sua pele com nosso tratamento facial personalizado.',
+      image:null, 
+    },
+    {
+      title: 'Depilação a Cera',
+      description: 'Remova os pelos de forma eficaz e duradoura com a depilação a cera.',
+      image:null,
+    },
+    {
+      title: 'Manicure e Pedicure',
+      description: 'Mime suas mãos e pés com nossos serviços de manicure e pedicure.',
+      image:null,
+    },
+    {
+      title: 'Manicure e Pedicure',
+      description: 'Mime suas mãos e pés com nossos serviços de manicure e pedicure.',
+      image: null,
+    },
+  ];
 
   return (
     <ScrollView>
@@ -23,15 +44,15 @@ const Home = () => {
      </View>
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}></Text>
+        <Text style={styles.title}>Procedimentos</Text>
       </View>
 
       <View style={styles.procedureContainer}>
         {procedures.map((procedure, index) => (
           <View style={styles.procedureBox} key={index}>
-            <Text style={styles.procedureTitle}>{procedure.nome}</Text>
-            <Image source={{uri: procedure.imagem[0].url}} style={styles.procedureImage} />
-            <Text style={styles.procedureDescription}>{procedure.descricao}</Text>
+            <Text style={styles.procedureTitle}>{procedure.title}</Text>
+            <Image source={procedure.image} style={styles.procedureImage} />
+            <Text style={styles.procedureDescription}>{procedure.description}</Text>
             <TouchableOpacity style={styles.button}>
               <Text style={styles.buttonText}>Agendar Horário</Text>
             </TouchableOpacity>
@@ -99,4 +120,3 @@ const styles = StyleSheet.create({
 });
 
 export default Home;
-
